@@ -1,0 +1,11 @@
+.inner{max-width: 1200px; width: 100%; margin: 0 auto; padding:  20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+h1{text-align: center;}
+header{margin-bottom: 150px;
+    li{
+        & + li{margin-top: 20px;}
+    }
+}
+ul,li{list-style: none;}
