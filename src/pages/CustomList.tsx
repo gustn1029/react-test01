@@ -22,6 +22,10 @@ function CustomList() {
         if((familyNameRef && familyNameRef.current) && (givenNameRef && givenNameRef.current)) {
             let getFamilyName = familyNameRef.current.value;
             let getGivenName = givenNameRef.current.value;
+
+            const fullName = getFamilyName + getGivenName;
+
+            window.localStorage.setItem('name', (fullName));
             
             setName({
                 familyName: getFamilyName,
@@ -36,7 +40,8 @@ function CustomList() {
             <input type="text" name="familyName" placeholder="성" ref={familyNameRef} />
             <input type="text" name="givenName" placeholder="이름" ref={givenNameRef} />
             <button onClick={confirm}>click</button>
-            <p>{`name : ${familyName}${givenName}`}</p>
+            <p>{`name : ${window.localStorage.getItem('name')}`}</p>
+            <p>새로고침 해도 값은 남아있습니다.</p>
         </>
     )
 }
